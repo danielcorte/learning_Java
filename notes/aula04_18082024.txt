@@ -1,0 +1,85 @@
+VARIAVEL:
+
+É uma porção de memória (RAM) utilizada para armazenar dados durante a execução dos programas
+
+SINTAXE:
+                   opcional
+<tipo><nome> = <valor inicial>;
+
+EXEMPLO:
+int idade = 25;
+double altura;
+char sexo = "F";
+
+Variável possui: Nome, Tipo, Valor, Endereço ---> qual local da memória RAM está
+
+TIPOS DE DADOS PRIMITIVOS:
+
+ __________________________________________________________________________________________________________
+| DESCRIÇÃO                            | Tipo    | Tamanho | Valores                        | Valor Padrão |
+| -                                    | ------- | ------- | -------------------------------|--------------|
+| Tipos numéricos inteiros             | BYTE    | 8 bits  | -128 a 127                     | 0            |
+| -                                    | SHORT   | 16 bits | -32768 a 32767                 | 0            |
+| -                                    | INT     | 32 bits | -2.147.483.648 a 2.147.483.647 | 0            |
+| -                                    | LONG    | 64 bits | -9.223.372.036.854.770.000 a   | 0L           |
+|                                      |                   |  9.223.372.036.854.770.000     |              |
+| -                                    | ------- | ------- | -------------------------------|              |
+| Tipos numéricos com ponto flutuante  | FLOAT   | 32 bits | -1,40224E-37 a 3,4028E+38      | 0.0f         |
+| -                                    | DOUBLE  | 64 bits | -4,94E-307 a 1,79E+308         | 0.0          |
+| -                                    | ------- | ------- | -------------------------------|              |
+| Um caractere unicode                 | CHAR    | 16 bits | '\u0000' a '\uFFFF'            | '\u0000'     |
+| -                                    | ------- | ------- | -------------------------------|              |
+| Valor verdade                        | BOOLEAN | 1 bit   | (False, True)                  | False        |
+____________________________________________________________________________________________________________
+
+Println = quebra de linha
+Print = não quebra linha
+
+Para formatar casos decimais usamos o PRINTF("%.2f %n", x); // R: 10,36
+Para trocar a virgula pelo ponto:
+  Início do código:
+    IMPORT JAVA.UTIL.LOCALE;
+
+  Final do código:
+    LOCALE.SETDEFAULT(LOCAL.US);
+
+"Texto01 %f Texto02 %f Texto03", variavel1, variavel2.
+
+Exemplo:
+  System.out.printf("Resultado = %.2f metros %n", x);
+
+EXERCICIO:
+
+package exercises;
+
+import java.util.*;
+
+public class Main {
+
+	public static void main(String[] args) {
+
+		String product1 = "Computer";
+		String product2 = "Office desk";
+
+		int age = 29;
+		int code = 5290;
+		char gender = 'F';
+
+		double price1 = 2100.0;
+		double price2 = 650.50;
+		double measue = 53.234567;
+
+		System.out.println("Products:");
+		System.out.printf("%s, which price is $ %.2f\n", product1, price1);
+		System.out.printf("%s, which price is $ %.2f\n", product2, price2);
+		System.out.printf("\nRecord: %d years old, code %d and gender: %c\n", age, code, gender);
+		System.out.printf("\nMeasue with eight decimal places: %.8f\n", measue);
+		System.out.printf("Rouded (three decimal places): %.3f\n", measue);
+		Locale.setDefault(Locale.US);
+		System.out.printf("US decimal point: %.3f", measue);
+
+
+
+	}
+
+}
